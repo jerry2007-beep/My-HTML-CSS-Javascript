@@ -1,0 +1,669 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Personal portfolio of Jerry B. Eslabra Jr.">
+<title>Jerry B. Eslabra Jr. | Portfolio</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #080d18;
+    color: white;
+}
+
+header {
+    background: #0c1424;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid #203b5c;
+}
+
+.logo {
+    color: white;
+    font-size: 25px;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.logo span, h1 span, h2 span {
+    color: #38aaff;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 14px;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: #38aaff;
+}
+
+.hero {
+    min-height: 90vh;
+    padding: 80px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    background: radial-gradient(circle at 80% 40%, #12345a, #080d18 55%);
+}
+
+.hero-text {
+    max-width: 600px;
+}
+
+.eyebrow {
+    color: #38aaff;
+    letter-spacing: 3px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 45px;
+    margin: 20px 0;
+}
+
+.hero h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    color: #b7c8dc;
+    line-height: 1.8;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 25px;
+    background: #168ee8;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.button:hover {
+    background: #0066b3;
+    transform: translateY(-4px);
+}
+
+.hero-card {
+    background: #101d30;
+    border: 1px solid #287cc0;
+    border-radius: 20px;
+    padding: 35px;
+    text-align: center;
+    width: 320px;
+    box-shadow: 0 0 30px #168ee833;
+}
+
+.photo-frame {
+    width: 180px;
+    height: 180px;
+    margin: auto auto 20px;
+    border-radius: 50%;
+    padding: 5px;
+    background: linear-gradient(135deg, #38aaff, #07539b);
+    box-shadow: 0 0 25px #168ee899;
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.hero-card h3 {
+    margin-bottom: 8px;
+}
+
+.tags {
+    margin-top: 20px;
+}
+
+.tags span {
+    display: inline-block;
+    background: #173b5e;
+    color: #8dccff;
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    margin: 3px;
+}
+
+.section {
+    padding: 80px 8%;
+}
+
+.section-dark {
+    background: #0c1424;
+}
+
+.section-title {
+    font-size: 35px;
+    margin: 10px 0 30px;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.panel {
+    background: #111f33;
+    border: 1px solid #243e5d;
+    border-radius: 15px;
+    padding: 25px;
+    line-height: 1.8;
+}
+
+.panel h3 {
+    margin-bottom: 15px;
+    color: #38aaff;
+}
+
+.panel p {
+    color: #bdcce0;
+}
+
+.details p {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 8px 0;
+    border-bottom: 1px solid #263b53;
+}
+
+.details strong {
+    color: white;
+}
+
+.details span {
+    text-align: right;
+}
+
+.timeline {
+    max-width: 800px;
+    margin: auto;
+}
+
+.timeline .panel {
+    margin-bottom: 20px;
+}
+
+.small-label {
+    color: #38aaff !important;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.muted {
+    color: #38aaff !important;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.skill-card {
+    background: #111f33;
+    padding: 25px;
+    border: 1px solid #243e5d;
+    border-radius: 15px;
+    transition: .3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-7px);
+    border-color: #38aaff;
+    box-shadow: 0 0 20px #168ee833;
+}
+
+.skill-icon {
+    font-size: 30px;
+    color: #38aaff;
+    margin-bottom: 10px;
+}
+
+.skill-card h3 {
+    margin-bottom: 8px;
+}
+
+.skill-card p {
+    color: #aebed2;
+    font-size: 14px;
+}
+
+pre {
+    background: #050a12;
+    padding: 20px;
+    border-radius: 10px;
+    overflow-x: auto;
+    color: #75c5ff;
+    margin: 20px 0;
+}
+
+pre code {
+    white-space: pre;
+    font-family: Consolas, monospace;
+}
+
+.note {
+    color: #38aaff !important;
+    font-size: 13px;
+}
+
+footer {
+    padding: 25px 8%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background: #070b13;
+    color: #9aabc0;
+}
+
+footer a {
+    color: #38aaff;
+    text-decoration: none;
+}
+
+@media(max-width: 800px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav {
+        text-align: center;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 5px;
+    }
+
+    .hero {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 500px) {
+    h1 {
+        font-size: 32px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-card {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .details p {
+        flex-direction: column;
+    }
+
+    .details span {
+        text-align: left;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+
+<header>
+    <a href="#home" class="logo">
+        Jerry B. Eslabra Jr.<span>.</span>
+    </a>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#java">Java Project</a>
+    </nav>
+</header>
+
+
+<section class="hero" id="home">
+
+    <div class="hero-text">
+        <p class="eyebrow">BSIT STUDENT • FUTURE PROGRAMMER</p>
+
+        <h1>Hello, I'm <span>Jerry B. Eslabra Jr.</span></h1>
+
+        <h2>Welcome to my personal portfolio.</h2>
+
+        <p>
+            I am a BSIT 1-A student at
+            Our Lady of The Sacred Heart.
+            I enjoy learning technology,
+            playing basketball, and playing online games.
+        </p>
+
+        <a href="#about" class="button">Get to know me →</a>
+    </div>
+
+    <div class="hero-card">
+        <div class="photo-frame">
+            <img src="jerry.img.jpg.jpg" alt="Jerry's Profile Picture">
+        </div>
+
+        <h3>Jerry B. Eslabra Jr.</h3>
+        <p>Information Technology Student</p>
+
+        <div class="tags">
+            <span>Honest</span>
+            <span>Kind</span>
+            <span>Motivated</span>
+        </div>
+    </div>
+
+</section>
+
+<!-- ABOUT SECTION -->
+<section class="section" id="about">
+
+    <p class="eyebrow">PERSONAL INFORMATION</p>
+    <h2 class="section-title">About Me</h2>
+
+    <div class="about-grid">
+
+        <div class="panel">
+            <h3>A Little Introduction</h3>
+
+            <p>
+                My name is Jerry B. Eslabra Jr. I am currently
+                taking Bachelor of Science in Information
+                Technology (BSIT). I consider myself honest,
+                kind, and motivated. I want to improve my
+                knowledge and skills, especially in computers
+                and programming.
+            </p>
+        </div>
+
+        <div class="panel details">
+
+            <p><strong>Full Name</strong><span>Jerry B. Eslabra Jr.</span></p>
+            <p><strong>Course</strong><span>BSIT 1-B</span></p>
+            <p><strong>School</strong><span>Our Lady of The Sacred Heart</span></p>
+            <p><strong>Hobbies</strong><span>Basketball and Online Games</span></p>
+            <p><strong>Personality</strong><span>Honest, Kind, Motivated</span></p>
+            <p><strong>Gmail</strong><span>jerryeslabra@gmail.com</span></p>
+            <p><strong>Contact</strong><span>09270061818</span></p>
+
+        </div>
+
+    </div>
+</section>
+
+<section class="section section-dark" id="education">
+
+    <p class="eyebrow">EDUCATION</p>
+    <h2 class="section-title">Educational Background</h2>
+
+    <div class="timeline">
+
+        <div class="panel">
+            <p class="small-label">CURRENT EDUCATION</p>
+            <h3>Our Lady of The Sacred Heart College of Guimba, Inc.</h3>
+            <p>Bachelor of Science in Information Technology</p>
+            <p>First Year College</p>
+            <p class="muted">Currently Studying</p>
+        </div>
+
+        <div class="panel">
+            <p class="small-label">PREVIOUS EDUCATION</p>
+            <h3>Senior High School</h3>
+            <p>Galvan High School.</p>
+            <p>TVL: Electrical Installation and Maintenance (EIM).</p>
+        </div>
+
+        <div class="panel">
+            <p class="small-label">PREVIOUS EDUCATION</p>
+            <h3>Junior High School</h3>
+            <p>Galvan High School.</p>
+        </div>
+
+    </div>
+</section>
+
+<section class="section" id="skills">
+
+    <p class="eyebrow">WHAT I CAN DO</p>
+    <h2 class="section-title">My Skills</h2>
+
+    <div class="skills-grid">
+
+        <div class="skill-card">
+            <div class="skill-icon">&lt;/&gt;</div>
+            <h3>HTML</h3>
+            <p>Learning to create web pages.</p>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-icon">#</div>
+            <h3>CSS</h3>
+            <p>Learning to design websites.</p>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-icon">J</div>
+            <h3>Java Programming</h3>
+            <p>Learning programming basics.</p>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-icon">★</div>
+            <h3>Communication</h3>
+            <p>Sharing ideas with others.</p>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-icon">✓</div>
+            <h3>Teamwork</h3>
+            <p>Working with other people.</p>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-icon">↗</div>
+            <h3>Motivation</h3>
+            <p>Always willing to learn.</p>
+        </div>
+
+    </div>
+</section>
+
+<section class="section section-dark" id="java">
+
+    <p class="eyebrow">CC102 FINAL PERFORMANCE TASK</p>
+    <h2 class="section-title">My Java Project</h2>
+
+    <div class="panel">
+
+        <h3>Java Number Guessing Game</h3>
+
+        <p>
+            This is my Java Console-Based Number Guessing Game.
+            The player must guess the secret number from 1 to 100
+            within 7 attempts. The game gives hints whether the
+            guess is too high or too low and calculates the
+            player's score.
+        </p>
+
+        <pre><code>import java.util.Scanner;
+import java.util.Random;
+
+public class NumberGuessingGame {
+
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+        Random random = new Random();
+
+        int playAgain = 1;
+
+        System.out.println("================================");
+        System.out.println("      NUMBER GUESSING GAME");
+        System.out.println("================================");
+        System.out.println("Guess the secret number from 1 to 100.");
+        System.out.println("You only have 7 attempts!");
+
+        while (playAgain == 1) {
+
+            int secretNumber = random.nextInt(100) + 1;
+            int attempts = 0;
+            int maxAttempts = 7;
+            boolean guessedCorrectly = false;
+
+            System.out.println("\nA new number has been generated!");
+
+            while (attempts < maxAttempts) {
+
+                System.out.print("\nEnter your guess: ");
+
+                while (!input.hasNextInt()) {
+                    System.out.print("Invalid input! Enter a number: ");
+                    input.next();
+                }
+
+                int guess = input.nextInt();
+
+                if (guess < 1 || guess > 100) {
+                    System.out.println("Please enter a number from 1 to 100.");
+                    continue;
+                }
+
+                attempts++;
+
+                if (guess == secretNumber) {
+                    System.out.println("Congratulations! You guessed correctly!");
+                    guessedCorrectly = true;
+                    break;
+                }
+                else if (guess < secretNumber) {
+                    System.out.println("Too LOW! Try a higher number.");
+                }
+                else {
+                    System.out.println("Too HIGH! Try a lower number.");
+                }
+
+                System.out.println("Attempts remaining: "
+                        + (maxAttempts - attempts));
+            }
+
+            // Display game results
+            System.out.println("\n========== GAME RESULT ==========");
+
+            if (guessedCorrectly) {
+
+                int score = (maxAttempts - attempts + 1) * 10;
+
+                System.out.println("Secret Number: " + secretNumber);
+                System.out.println("Attempts Used: " + attempts);
+                System.out.println("Your Score: " + score);
+                System.out.println("Result: YOU WIN!");
+
+            } else {
+
+                System.out.println("Secret Number: " + secretNumber);
+                System.out.println("Attempts Used: " + attempts);
+                System.out.println("Your Score: 0");
+                System.out.println("Result: GAME OVER!");
+
+            }
+
+            System.out.println("=================================");
+
+            System.out.println("\nDo you want to play again?");
+            System.out.println("1 - YES");
+            System.out.println("2 - NO");
+            System.out.print("Enter your choice: ");
+
+            while (!input.hasNextInt()) {
+                System.out.print("Invalid choice! Enter 1 or 2: ");
+                input.next();
+            }
+
+            playAgain = input.nextInt();
+
+            while (playAgain != 1 && playAgain != 2) {
+                System.out.print("Please enter only 1 or 2: ");
+
+                while (!input.hasNextInt()) {
+                    System.out.print("Invalid input! Enter 1 or 2: ");
+                    input.next();
+                }
+
+                playAgain = input.nextInt();
+            }
+        }
+
+        System.out.println("\nThank you for playing!");
+        System.out.println("GAME EXITED.");
+
+        input.close();
+    }
+}</code></pre>
+
+        <p class="note">
+            CC102 Final Performance Task - Java Number Guessing Game.
+        </p>
+
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Jerry B. Eslabra Jr. | Web Portfolio</p>
+    <a href="#home">Back to top ↑</a>
+</footer>
+
+</body>
+</html>
